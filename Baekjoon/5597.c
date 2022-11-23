@@ -1,5 +1,4 @@
 // B5 과제 안 내신 분..?
-
 #include <stdio.h>
 int main()
 {

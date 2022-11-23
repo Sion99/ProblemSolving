@@ -3,6 +3,9 @@
 # 시간 단축 어떻게든 해보겠다고 엄청나게 시간을 많이 잡아먹었다..
 # 머리 터질 거 같음
 
+# 내가 푼 답 (결국 시간 초과 해결 못함 정답률 91퍼)
+from collections import defaultdict
+
 
 def solution(id_list, report, k):
     answer = []
@@ -39,4 +42,28 @@ def solution(id_list, report, k):
             if id_list[j] == mailed[i]:
                 answer[j] += 1
 
+    return answer
+
+
+# 다른 사람 답 (어떻게든 보고 이해하긴 했는데..너무 힘들다)
+
+def solution(id_list, report, k):
+    answer = []
+
+    report = list(set(report))
+
+    user = defaultdict(set)
+    cnt = defaultdict(int)
+
+    for i in report:
+        case = i.split()
+        user[case[0]].add(case[1])
+        cnt[case[1]] += 1
+
+    for i in range(len(id_list)):
+        result = 0
+        for u in user[id_list[i]]:
+            if cnt[u] >= k:
+                result += 1
+        answer.append(result)
     return answer

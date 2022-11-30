@@ -7,7 +7,6 @@ def solution(s):
         number.append(int(arr[i]))
 
     number.sort()
-    print(number)
     answer += str(number[0])
     answer += ' '
     answer += str(number[-1])

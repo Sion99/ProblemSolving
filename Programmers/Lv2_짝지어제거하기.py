@@ -1,30 +1,27 @@
+# 12/05
+# 첫 시도부터 정답까지 며칠 걸림..
+# 답은 스택!
+
 def solution(s):
-    answer = -1
+    answer = 0
+    s = list(s)
+    last = len(s)
     while (True):
-        result = 0
-        temp = ''
-        for i in range(len(s)):
-            if i == len(s)-2:
-                break
-            if s[i] == s[i+1]:
-                result = 1
-                if (i < len(s)-2):
-                    temp += s[i+2:]
-                    break
+        stack = []
+        for i in s:
+            if len(stack) > 0:
+                if stack[-1] == i:
+                    stack.pop()
                 else:
-                    break
+                    stack.append(i)
             else:
-                temp += s[i]
-                print(temp)
-        s = temp
-        if result == 0:
+                stack.append(i)
+        s = stack
+        if len(s) == 0:
+            answer = 1
+            break
+        if last == len(s):
             answer = 0
             break
-    print(s)
-    if len(s) == 0:
-        answer = 1
+        last = len(s)
     return answer
-
-
-s = 'baabaa'
-print(solution(s))

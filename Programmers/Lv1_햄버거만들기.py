@@ -20,6 +20,26 @@ def solution(ingredient):
 
     return answer
 
+# 12/12
+# 위처럼 하니까 시간초과났음
+# 이렇게 풀어야 한다!
+
+
+def solution(ingredient):
+    stack = []
+    answer = 0
+    for i in range(len(ingredient)):
+        stack.append(ingredient[i])
+        if len(stack) > 3:
+            if stack[-4:] == [1, 2, 3, 1]:
+                stack.pop()
+                stack.pop()
+                stack.pop()
+                stack.pop()
+                answer += 1
+
+    return answer
+
 
 ingredient = [2, 1, 1, 2, 3, 1, 2, 3, 1]
 print(solution(ingredient))

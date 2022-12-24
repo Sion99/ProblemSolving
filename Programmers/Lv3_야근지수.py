@@ -1,3 +1,8 @@
+# 12/23 도전중
+# 이게 아닌가ㅏ벼..
+# 가장 ~한 수는 heap을 쓰는 거라는 것을 바로 떠올려야 한단다!
+# 다시 도전해보기
+
 def solution(n, works):
     answer = 0
     works.sort(reverse=True)

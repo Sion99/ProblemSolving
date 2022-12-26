@@ -52,8 +52,9 @@ def solution(n, works):
     #         answer += j*j
     #     return answer
 
-    works = [4, 3, 3]
-    n = 4
-    works = [800, 100, 55, 45]
-    n = 999
-    print(solution(n, works))
+
+works = [4, 3, 3]
+n = 4
+works = [800, 100, 55, 45]
+n = 999
+print(solution(n, works))

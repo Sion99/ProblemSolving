@@ -20,9 +20,19 @@ int flyme(int x, int y)
 {
     int result;
     int term;
+    int start;
 
     term = 1;
     result = 0;
+    for (int i = x; i < y; i++)
+    {
+        if (checkif(x, y))
+        {
+            start = i;
+            break;
+        }
+
+    }
     while (x < y - 1)
     {
         x += term;

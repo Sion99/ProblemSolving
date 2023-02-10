@@ -1,66 +1,31 @@
 #include <stdio.h>
 
-int checkif(int start, int end)
-{
-    int term;
-
-    term = 1;
-    while (start < end)
-    {
-        start += term;
-        term++;
-    }
-    if (start == end)
-        return 1;
-    else
-        return 0;
-}
-
-int flyme(int x, int y)
-{
-    int result;
-    int term;
-    int start;
-
-    term = 1;
-    result = 0;
-    for (int i = x; i < y; i++)
-    {
-        if (checkif(x, y))
-        {
-            start = i;
-            break;
-        }
-
-    }
-    while (x < y - 1)
-    {
-        x += term;
-        term++;
-        result++;
-    }
-    if (x == y - 1)
-        return (result + 1);
-    else
-    {
-        term--;
-        x -= term;
-        result--;
-    }
-    return (result + 1);
-}
-
 int main()
 {
-    int t;
-    int x, y;
-    int result;
+    //    int t;
+    //    int x, y;
+    //    int result;
+    int arr[50000];
+    int temp, k;
 
-    scanf("%d", &t);
-    for (int i = 0; i < t; i++)
+    temp = 0;
+    k = 1;
+    for (int i = 0; i < 50000; i++)
     {
-        scanf("%d %d", &x, &y);
-        result = flyme(x, y);
-        printf("%d\n", result);
+        arr[i] = temp;
+        temp += k;
+        k++;
     }
+    for (int i = 0; i < 50000; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    // scanf("%d", &t);
+    // for (int i = 0; i < t; i++)
+    // {
+    //     scanf("%d %d", &x, &y);
+    //     result = flyme(y - x);
+    //     printf("%d\n", result);
+    // }
 }

@@ -18,7 +18,6 @@ int main()
     int x;
     int count;
     int i, j;
-    int flag;
 
     scanf("%d", &n);
     arr = (int *)malloc(sizeof(int) * n);
@@ -31,30 +30,18 @@ int main()
     qsort(arr, n, sizeof(int), compare);
     i = 0;
     j = n - 1;
-    flag = 0;
     while (i < j)
     {
         if (arr[i] + arr[j] == x)
         {
             count++;
-            if (arr[i] == arr[i + 1])
+            if (arr[i + 1] - arr[i] < arr[j] - arr[j - 1])
             {
                 i++;
             }
-            else if (arr[j] == arr[j - 1])
-            {
-                j--;
-            }
             else
             {
-                if (arr[i + 1] - arr[i] < arr[j] - arr[j - 1])
-                {
-                    i++;
-                }
-                else
-                {
-                    j--;
-                }
+                j--;
             }
         }
         else if (arr[i] + arr[j] > x)
@@ -64,19 +51,6 @@ int main()
         else if (arr[i] + arr[j] < x)
         {
             i++;
-        }
-        else
-        {
-            if (flag == 0)
-            {
-                i++;
-                flag++;
-            }
-            else
-            {
-                j--;
-                flag = 0;
-            }
         }
     }
     free(arr);

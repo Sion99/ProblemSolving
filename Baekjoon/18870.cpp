@@ -16,4 +16,5 @@ int main()
     }
     copy(arr.begin(), arr.end(), arr2.begin());
     sort(arr.begin(), arr.end());
+    
 }

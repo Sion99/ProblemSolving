@@ -1,7 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <queue>
-
+// bfs 연습을 제대로 하자.. 코드를 잘 숙지해서 다음번에도 잘 쓸 수 있게 해야지
 using namespace std;
 
 #define X first

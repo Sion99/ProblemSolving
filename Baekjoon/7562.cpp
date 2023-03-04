@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <utility>
-
+// 코드가 좀 더럽긴 해도.. bfs는 진짜 만능이다
 using namespace std;
 
 int dx[4] = {1, 2, -1, -2};

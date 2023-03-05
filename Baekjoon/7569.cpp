@@ -5,7 +5,6 @@
 using namespace std;
 
 // 2차원 토마토 문제를 3차원으로!
-
 int board[101][101][101];
 int visited[101][101][101];
 

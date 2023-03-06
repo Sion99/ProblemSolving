@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-
+// 실버 1 숨바꼭질과 굉장히 비슷한 bfs 문제
 using namespace std;
 
 int board[1000001];

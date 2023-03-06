@@ -3,7 +3,6 @@
 // bfs는 신인가???
 using namespace std;
 
-int range[100001];
 int visited[100001];
 
 int main()

@@ -31,9 +31,7 @@ void dfs(int a)
 
 int main()
 {
-
     cin >> n >> m;
     dfs(0);
-
     return 0;
 }

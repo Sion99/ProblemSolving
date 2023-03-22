@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "iostream": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "string": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

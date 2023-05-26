@@ -21,7 +21,6 @@ void bfs(int n, int k)
 {
 	queue<pair<int, int> > Q;
 	vector<int> v;
-	int ans = 0;
 
 	Q.push(make_pair(n, 0));
 	visited[n] = true;

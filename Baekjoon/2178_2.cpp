@@ -18,6 +18,8 @@ int bfs(int n, int m)
 	{
 		auto cur = Q.front();
 		Q.pop();
+
+		// 미로의 끝에 도달하면 탐색 종료
 		if (cur.first.first == n - 1 && cur.first.second == m - 1)
 		{
 			res = cur.second;

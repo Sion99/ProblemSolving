@@ -22,7 +22,7 @@ void dfs(int a)
 		if (a == 0 || number[a - 1] <= i)
 		{
 			if (visited[i])
-			continue;
+				continue;
 			visited[i] = true;
 			number[a] = i;
 			dfs(a + 1);

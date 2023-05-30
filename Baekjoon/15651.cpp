@@ -4,7 +4,6 @@ using namespace std;
 
 int n, m;
 int number[8];
-bool visited[8];
 
 void dfs(int a)
 {

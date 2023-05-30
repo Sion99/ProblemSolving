@@ -8,6 +8,9 @@ char board[101][101];
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
 
+
+// char c를 받아서
+// c와 동일한 문자들을 확인함
 int bfs(int n, int m, char c)
 {
 	bool visited[101][101] = {false, };

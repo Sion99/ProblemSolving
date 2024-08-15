@@ -4,7 +4,8 @@
         "iostream": "cpp",
         "list": "cpp",
         "queue": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

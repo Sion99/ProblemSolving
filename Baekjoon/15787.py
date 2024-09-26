@@ -1,5 +1,5 @@
 n, m = map(int, input().split())
-train = [[0 for _ in range(20)] for _ in range(m)]
+train = [[0 for _ in range(20)] for _ in range(n)]
 
 state = []
 
@@ -16,7 +16,7 @@ for i in range(m):
     elif order[0] == 4:
         for j in range(19):
             train[order[1] - 1][j] = train[order[1] - 1][j + 1]
-        train[order[1] - 1][0] = 0
+        train[order[1] - 1][19] = 0
 
 for t in train:
     if t not in state:

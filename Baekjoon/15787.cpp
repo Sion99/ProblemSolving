@@ -17,5 +17,13 @@ int main() {
     // M번의 명령 후에 1번째 기차부터 순서대로 한 기차씩 은하수를 건너는데 조건이 있음
     // 기차내 좌석 상태가 중복이 되면 안됨 -> 즉, 이것을 집합으로 해서 중복을 제거해야 할 듯?
     
-     
+    int n, m;
+    cin >> n >> m;
+
+    for (int i = 0; i < m; i++) {
+        int order_num, train_num, x_num;
+        cin >> order_num >> train_num >> x_num;
+
+        cout << order_num << ' ' << train_num << ' ' << x_num << '\n';
+    }
 }

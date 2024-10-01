@@ -10,10 +10,15 @@ n = int(input())
 t = []
 p = []
 
-for _ in range(n):
+for i in range(n):
     ti, pi = map(int, input().split())
     t.append(ti)
     p.append(pi)
 
 print(t)
 print(p)
+
+pay = []
+
+for i in range(n):
+    pay[i] = 

@@ -18,7 +18,9 @@ for i in range(n):
 print(t)
 print(p)
 
-pay = []
+pay = [[0] * 2 for _ in range(n)]
+
+print(pay)
 
 for i in range(n):
-    pay[i] = 
+    

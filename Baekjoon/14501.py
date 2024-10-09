@@ -22,5 +22,4 @@ pay = [[0] * 2 for _ in range(n)]
 
 print(pay)
 
-for i in range(n):
-    
+# for i in range(n):

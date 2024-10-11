@@ -34,9 +34,6 @@ orders = list(map(int, input().rstrip().split()))
 # 가장 처음에 주사위에는 모든 면이 0으로 적혀있음
 dice = [0, 0, 0, 0, 0, 0]
 
-# 주사위는 0~5 면이 있다고 하자
-
-
 dh = deque([6, 3, 1, 4])
 dv = deque([6, 5, 1, 2])
 
@@ -61,34 +58,34 @@ for order in orders:
     if order == 1:
         # 동쪽으로 굴렀을 때
         # 수평으로 증가하는 방항 (y값 증가)
-        dh.rotate(1)
-        ground = dh[0]
-        air = dh[2]
+        dh.rotate(-1)
+        dv[0], dv[2] = dh[0], dh[2]
+
     if order == 2:
         # 서쪽으로 굴렀을 때
-        dh.rotate(-1)
-        ground = dh[0]
-        air = dh[2]
+        dh.rotate(1)
+        dv[0], dv[2] = dh[0], dh[2]
+
     if order == 3:
         # 북쪽으로 굴렸을 때
-        dv.rotate(-1)
-        ground = dv[0]
-        air = dv[2]
-    if order == 4:
         dv.rotate(1)
-        ground = dv[0]
-        air = dv[2]
+        dh[0], dh[2] = dv[0], dv[2]
+
+    if order == 4:
+        dv.rotate(-1)
+        dh[0], dh[2] = dv[0], dv[2]
+
     
     # 이동한 칸이 쓰여 있는 수 체크
     if board[nx][ny] == 0:
         # 주사위 바닥면에 있는 수가 칸에 복사됨
-        board[nx][ny] = dice[ground-1]
+        board[nx][ny] = dice[dh[0]-1]
     else:
         # 칸에 쓰여 있는 수가 주사위의 바닥면으로 복사되고, 칸에 쓰여 있는 수는 0이 됨
-        dice[ground-1] = board[nx][ny]
+        dice[dh[0]-1] = board[nx][ny]
         board[nx][ny] = 0
 
     x, y = nx, ny
 
     # 주사위 윗 면에 쓰여 있는 수 출력
-    print(dice[air-1])
+    print(dice[dh[2]-1])

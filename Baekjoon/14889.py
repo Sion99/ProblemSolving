@@ -11,7 +11,19 @@
 # 1 2팀의 능력치 차이를 최소로 하려고 한다.
 
 import sys
-from itertools import combinations
+
+def backtrack(arr, selected, start, n, m):
+    global teams
+    if len(selected) == m:
+        temp = []
+        for s in selected:
+            temp.append(players[s])
+        teams.append(temp)
+    else:
+        for i in range(start, n):
+            selected.append(i)
+            backtrack(arr, selected, i+1, n, m)
+            selected.pop()
 
 input = sys.stdin.readline
 
@@ -26,19 +38,33 @@ for _ in range(n):
 
 players = [i for i in range(n)]
 
-comb = list(combinations(players, 2))
+teams = []
 
-for c in comb:
-    s1 = synergy[c[0]][c[1]]
-    s2 = synergy[c[1]][c[0]]
-    synergy[c[0]][c[1]] = s1 + s2
-    synergy[c[1]][c[0]] = s1 + s2
+total_synergy = 0
 
-print(synergy)
+backtrack(players, [0], 1, n, n//2)
 
-team = list(combinations(players, n//2))
+ans = 1000000
+for team in teams:
+    # 우리팀과 상대팀의 시너지 격차 계산
+    # 우리팀 먼저
+    start_synergy = 0
+    for i in range(n//2):
+        for j in range(i+1, n//2):
+            start_synergy += synergy[team[i]][team[j]]
+            start_synergy += synergy[team[j]][team[i]]
+    
+    # 상대팀
+    opponents = []
+    for i in range(n):
+        if i not in team:
+            opponents.append(i)
+    link_synergy = 0
+    for i in range(n//2):
+        for j in range(i+1, n//2):
+            link_synergy += synergy[opponents[i]][opponents[j]]
+            link_synergy += synergy[opponents[j]][opponents[i]]
+    
+    ans = min(ans, abs(start_synergy - link_synergy))
 
-# 모든 팀 경우의 수를 구해서, 각각의 팀 시너지 총합을 다 구한다
-# 그 다음, 
-
-print(team)
+print(ans)

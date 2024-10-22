@@ -39,7 +39,6 @@ hurricane = [[0, -1], [1, 0], [0, 1], [-1, 0]]
 # 허리케인 이동방향에 따른 알파 위치
 alphas = [[2, 1], [3, 2], [2, 3], [1, 2]]
 
-
 # 흩날리는 비율방향
 sand_spread = [spread, spread1, spread2, spread3]
 

@@ -30,7 +30,6 @@ def count_s(selected):
         return True
     return False
 
-
 def bfs(selected):
     board = [[0 for _ in range(5)] for _ in range(5)]
     visited = [[False for _ in range(5)] for _ in range(5)]
@@ -63,7 +62,6 @@ def bfs(selected):
         return True
     return False
 
-
 def backtrack(selected, idx):
     global answer
     if len(selected) == 7:
@@ -82,7 +80,5 @@ for _ in range(5):
     board.append(list(input()))
 
 answer = 0
-
 backtrack([], 0)
-
 print(answer)

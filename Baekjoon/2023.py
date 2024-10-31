@@ -29,11 +29,7 @@ def find_strange_prime(n):
                     temp.append(primes[n-2][i] * 10 + j)
         primes.append(temp)
                     
-
-
-        
-    
-
+                    
 n = int(input())
 
 primes = []
